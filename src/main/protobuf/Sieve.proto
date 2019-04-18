@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package protocols;
+
+service SieveServer {
+    rpc GetTask (TaskRequest) returns (Task) {}
+    rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {}
+}
+
+message TaskRequest {
+    SievedWheel prevTaskResponse = 1;
+    bool getTask = 2;
+}
+
+message SievedWheel {
+    repeated BInteger quasiPrimes = 1;
+    BInteger removeLock = 2;
+    int64 clientId = 3;
+}
+
+message Task {
+    bool pending = 1;
+    BInteger pi = 2;
+    BInteger prime = 3;
+    BInteger wheelMod = 4;
+    int64 clientId = 5;
+}
+
+message BInteger {
+    bytes value = 1;
+}
+
+message HealthCheckResponse {
+    bool stop = 1;
+}
+
+message HealthCheckRequest {
+    int64 clientId = 1;
+}
