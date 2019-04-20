@@ -63,9 +63,9 @@ class ProtoServer(executionContext: ExecutionContext) {
     private var outPrimes: PrintWriter = _
 
     private var checkPoint: CheckPoint = _
-    private val checkPointFile: File = new File("checkPoint.bin")
+    private val checkPointFile: File = new File("files/checkPoint.bin")
     private var lastPrime: BigInt = 5
-    private val primesFile: File = new File("primes.txt")
+    private val primesFile: File = new File("files/primes.txt")
 
     if (checkPointFile.exists() && primesFile.exists()) {
       val fip = new FileInputStream(checkPointFile)

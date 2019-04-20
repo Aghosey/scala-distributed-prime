@@ -14,13 +14,12 @@ Use whatever name instead of x-client and server
 
 To run server
 ```
- docker -v ~/primes.txt:/code/primes.txt \
-        -v ~/checkPoint.bin:/code/checkPoint.bin \ -p 9999:9999 x-server 
+ docker run -v ~/bigdata-files:/code/files -P x-server
 ```
+Note that `~/bigdata-files` is the directory for server backup and output files
 
-Similarly to run server
+Similarly to run client
 ```
- docker -v ~/primes.txt:/code/primes.txt \
-        -v ~/checkPoint.bin:/code/checkPoint.bin \ x-client 
+ docker run x-client 
 ```
 

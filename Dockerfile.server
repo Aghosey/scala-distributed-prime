@@ -9,6 +9,7 @@ RUN sbt compile
 
 ADD . /code
 
+CMD sbt compile
 CMD echo "runMain ProtoServer" | sbt
 
 EXPOSE 9999
