@@ -1,0 +1,14 @@
+FROM mozilla/sbt
+
+ADD ./project /code/project
+ADD ./build.sbt /code/build.sbt
+ADD ./build.sbt /code/build.sbt
+WORKDIR /code
+
+RUN sbt compile
+
+ADD . /code
+
+CMD echo "runMain ProtoServer" | sbt
+
+EXPOSE 9999

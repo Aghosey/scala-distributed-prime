@@ -25,3 +25,6 @@ libraryDependencies ++= Seq(
 )
 
 fork in run := true
+
+libraryDependencies += "io.suzaku" %% "boopickle" % "1.3.0"
+
